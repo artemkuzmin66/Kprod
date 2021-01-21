@@ -1,0 +1,172 @@
+body {
+   margin: 0;
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+      "Droid Sans", "Helvetica Neue", sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.container {
+   max-width: 1170px;
+   margin: 0 auto;
+   padding: 0 16px;
+   width: 100%;
+   position: relative;
+   box-sizing: border-box;
+}
+
+ul {
+   list-style-type: none;
+}
+
+a {
+   text-decoration: none;
+}
+
+a,
+button,
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+   margin: 0;
+   padding: 0;
+}
+
+//works
+
+.works {
+   padding-top: 64px;
+   padding-bottom: 50px;
+   @media (min-width: 576px) {
+      padding-top: 82px;
+      padding-bottom: 70px;
+   }
+   @media (min-width: 768px) {
+      padding-top: 115px;
+      padding-bottom: 114px;
+   }
+   @media (min-width: 1200px) {
+      padding-top: 129px;
+      padding-bottom: 128px;
+   }
+   &__title {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: 0.02em;
+      color: #454750;
+      margin-bottom: 30px;
+      position: relative;
+      @media (min-width: 576px) {
+         margin-bottom: 46px;
+      }
+      @media (min-width: 768px) {
+         font-size: 43px;
+         line-height: 51px;
+         margin-bottom: 50px;
+      }
+      &::before {
+         content: "";
+         position: absolute;
+         width: 36.2px;
+         height: 1.5px;
+         background: #3685ee;
+         left: 0;
+         top: -15px;
+         @media (min-width: 576px) {
+            width: 46.6px;
+            height: 1.86px;
+         }
+         @media (min-width: 768px) {
+            width: 50px;
+            height: 2px;
+         }
+      }
+   }
+   &__content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      &-item {
+         background: #fefefe;
+         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+         border-radius: 2px;
+         padding-bottom: 21px;
+         cursor: pointer;
+         transition: all 0.3s;
+         position: relative;
+         margin-bottom: 30px;
+         margin-right: 9px;
+
+         @media (min-width: 992px) {
+            &:hover {
+               .works__content-item-title {
+                  color: #3685ee;
+               }
+               .works__content-item-img-search {
+                  visibility: visible;
+                  height: 60px;
+               }
+               border-bottom: 2px solid #3685ee;
+            }
+         }
+
+         &-img {
+            position: relative;
+            img {
+               width: 100%;
+               object-fit: revert;
+            }
+            &-search {
+               width: 60px;
+               height: 60px;
+               border-radius: 50%;
+               top: 50%;
+               left: 50%;
+               z-index: 10;
+               box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+               background: #fefefe;
+               position: absolute;
+               transform: translate(-50%, -50%);
+               visibility: hidden;
+               height: 0;
+               transition: height 0.2s linear;
+               &::before {
+                  content: "";
+                  background: url(../src/images/search.svg);
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  background-position: 0 0;
+                  position: absolute;
+                  width: 20px;
+                  height: 20px;
+                  transform: translate(-50%, -50%);
+                  top: 50%;
+                  left: 50%;
+               }
+            }
+         }
+         &-title {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 28px;
+            color: #454750;
+            margin-top: 20px;
+            margin-left: 30px;
+            max-width: 234px;
+            @media (min-width: 576px) {
+               font-size: 15px;
+            }
+         }
+      }
+   }
+}
